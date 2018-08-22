@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+<meta content="en-us" http-equiv="Content-Language">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="style3.css">   
+   
+<title>IMAGE MOVEMENT AND ROTATION USING JAVASCRIPT</title>
+
+</head>
+ 
+<body>
+    
+<script>
+  var rotate;    
+  var amount = 0;
+  function rotateAnimation(e1,speed) {
+  var elem = document.getElementById(e1);
+elem.style.transform = "rotate("+amount+"deg)";
+        rotate = setTimeout('rotateAnimation(\''+e1+'\','+speed+')',speed);
+        amount++;
+        if(amount>359){
+            amount=1;
+        }
+    }
+    
+    </script>   
+<div id="Container">
+        <img id="image1" alt="image 1" src="img/orange.png" width="300" height="300">
+          &nbsp; &nbsp; &nbsp; &nbsp;
+         <img id="image2" alt="image 2" src="img/white.png" width="300" height="300">
+           &nbsp; &nbsp; &nbsp; &nbsp; 
+         <img id="image3" alt="image 3" src="img/green.png" width="300" height="300">
+         <canvas id="my_canvas" width="1240px" height="400px"></canvas>
+          <script src="canvas.js"> </script>
+
+</div>
+    
+        <script>rotateAnimation("image1",100);</script>    
+        <script>rotateAnimation("image2",100);</script>
+        <script>rotateAnimation("image3",100);</script>
+<script>
+var Thing = document.querySelector("#image1");
+var Thing1 = document.querySelector("#image2");
+var Thing2 = document.querySelector("#image3");
+var Position = 0;
+var Position1 = 0;
+var Position2 = 0;
+
+    moveThing();
+function moveThing() {
+    Position += 5;
+    Thing.style.left = Position + "px";
+    if (Math.abs(Position) >= 1400) {
+        Position = -1000;
+    }
+    requestAnimationFrame(moveThing);
+}
+
+  moveThing1();    
+function moveThing1() {
+    Position1 += 5;
+    Thing1.style.left = Position1 + "px";
+    if (Math.abs(Position1) >= 1400) {
+        Position1 = -1000;
+    }
+    requestAnimationFrame(moveThing1);
+}
+   
+   moveThing2(); 
+    function moveThing2() {
+    Position2 += 5;
+    Thing2.style.left = Position2 + "px";
+    if (Math.abs(Position2) >= 1400) {
+        Position2 = -1000;
+    }
+     
+    requestAnimationFrame(moveThing2);
+}
+
+    
+    </script>
+    
+    
+</body>
+</html>
+
+
+
+

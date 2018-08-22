@@ -1,0 +1,18 @@
+ body{
+        padding: 20px;
+        margin: 35px;
+        margin-top: 40px;
+    }
+    
+#Container {
+    width: 1240px;
+    height: 400px;
+    overflow: hidden;
+    background-color: yellow;
+            }
+  #image1 ,#image2, #image3 {
+    position: relative;
+    left: 100px;
+    top: 25px;
+     }
+    
